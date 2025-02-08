@@ -33,6 +33,10 @@ app.use("/api/users",userRoutes);
 app.use("/api/auth",authRoutes);
 app.use("/api/explore",exploreRoutes);
 
+app.get("*",(req,res)=>{
+    res.send('Internal Server Error')
+})
+
 app.listen(PORT,(req,res)=>{
     console.log(`Server Running ${PORT}`);
     connectDb()

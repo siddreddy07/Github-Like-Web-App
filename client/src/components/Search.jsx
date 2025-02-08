@@ -1,10 +1,14 @@
 import {useState} from 'react'
+import { useAuthContext } from '../context/AuthContext'
 
 const Search = ({onSearch}) => {
 
   const [username,setusername] = useState('')
+  const {authUser} = useAuthContext()
 
   return (
+    <>
+    {authUser && 
     <form onSubmit={(e)=>{
       if(username!=''){
         onSearch(e,username)}
@@ -18,6 +22,8 @@ const Search = ({onSearch}) => {
         <button type='submit' className='px-4 py-2 bg-blue-600 font-semibold rounded-lg text-white'>Search</button>
       </div>
       </form>
+    }
+    </>
   )
 }
 
