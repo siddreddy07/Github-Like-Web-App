@@ -21,7 +21,7 @@ const explorerepos = async(language)=>{
 
   try {
 
-    const res = await fetch(`http://localhost:5000/api/explore/repos/${language}`)
+    const res = await fetch(`/api/explore/repos/${language}`)
 
     const {repos} = await res.json();
     
