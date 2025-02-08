@@ -29,16 +29,16 @@ app.use(passport.session());
 app.use(cors())
 
 
-app.use(express.static(path.join(__dirname,"/client/dist")))
-
 
 app.use("/api/users",userRoutes);
 app.use("/api/auth",authRoutes);
 app.use("/api/explore",exploreRoutes);
 
-app.get("*",(req,res)=>{
-    res.sendFile(path.join(__dirname,"client","dist","index.html"))
-})
+app.use(express.static(path.join(__dirname, "/frontend/dist")));
+
+app.get("*", (req, res) => {
+	res.sendFile(path.join(__dirname, "frontend", "dist", "index.html"));
+});
 
 app.listen(PORT,(req,res)=>{
     console.log(`Server Running ${PORT}`);

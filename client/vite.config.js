@@ -7,7 +7,7 @@ export default defineConfig({
   server:{
     port:3000,
     proxy:{
-      "/api":"https://devhub-5s11.onrender.com",
+      "/api":"http://localhost:5000",
     }
   },
 });
