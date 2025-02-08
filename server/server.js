@@ -25,9 +25,7 @@ app.use(passport.session());
 
 app.use(cors())
 
-app.get("/",(req,res)=>{
-    res.json("Hello World")
-})
+
 
 app.use("/api/users",userRoutes);
 app.use("/api/auth",authRoutes);
